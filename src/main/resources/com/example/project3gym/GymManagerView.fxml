@@ -1,53 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="421.0" prefWidth="299.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3gym.GymManagerController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-   <MenuBar>
-     <menus>
-       <Menu mnemonicParsing="false" text="Main">
-         <items>
-           <MenuItem mnemonicParsing="false" text="Close" />
-         </items>
-       </Menu>
-       <Menu mnemonicParsing="false" text="Classes">
-         <items>
-           <MenuItem mnemonicParsing="false" onAction="#onDisplayButtonClick" text="Display" />
-         </items>
-       </Menu>
-       <Menu mnemonicParsing="false" text="About">
-         <items>
-           <MenuItem mnemonicParsing="false" text="About" />
-         </items>
-       </Menu>
-     </menus>
-   </MenuBar>
-   <Label text="Hello User what would you like to do today?" />
-
-    <Label fx:id="tempText" />
-   <GridPane>
-     <columnConstraints>
-       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-     </columnConstraints>
-     <rowConstraints>
-       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-     </rowConstraints>
-      <children>
-          <Button onAction="#onAddButtonClick" text="Add" />
-         <Button mnemonicParsing="false" onAction="#onRemoveButtonClick" text="Remove" GridPane.columnIndex="1" />
-         <Button mnemonicParsing="false" text="Check In" GridPane.rowIndex="1" />
-         <Button mnemonicParsing="false" text="Check Out" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-         <Button mnemonicParsing="false" text="Guest Check In" GridPane.rowIndex="2" />
-         <Button mnemonicParsing="false" text="Guest Check Out" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      </children>
-   </GridPane>
-   <Button mnemonicParsing="false" onAction="#onQuitButtonClick" text="Quit" />
-</VBox>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3gym.GymManagerController">
+  <tabs>
+    <Tab text="Register">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="281.0" layoutY="302.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="Add" />
+                  <Label fx:id="tempText" layoutX="240.0" layoutY="339.0" />
+                  <GridPane layoutX="200.0" layoutY="94.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Date of Birth:" GridPane.rowIndex="2" />
+                        <Label text="First Name:" />
+                        <Label text="Last Name:" GridPane.rowIndex="1" />
+                        <TextArea fx:id="fName" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                        <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="200.0" layoutY="193.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Membership:" />
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Label layoutX="217.0" layoutY="14.0" text="Follow Steps Below to Register " />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Unenroll">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+      </content>
+    </Tab>
+      <Tab text="Check In">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
