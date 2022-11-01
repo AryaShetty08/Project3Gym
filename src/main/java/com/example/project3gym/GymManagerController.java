@@ -36,7 +36,7 @@ public class GymManagerController {
 
         Date dobTest = new Date(dob.getValue().getMonthValue(), dob.getValue().getDayOfMonth(), dob.getValue().getYear());
 
-        //registrationOutput.setText(add(fName.getText(), lName.getText(), dobTest, loc.getText(), membershipType));
+        registrationOutput.setText(add(fName.getText(), lName.getText(), dobTest, loc.getText(), membershipType));
 
     }
 
