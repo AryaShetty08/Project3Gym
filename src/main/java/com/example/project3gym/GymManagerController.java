@@ -1,25 +1,49 @@
 package com.example.project3gym;
 
 import fitnessmanager.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 
 public class GymManagerController {
     private MemberDatabase db = new MemberDatabase();
     private ClassSchedule cs = new ClassSchedule();
     @FXML
-    private Label tempText;
+    private Label registrationOutput;
+    private MembershipType membershipType;
+    public Button addButton;
+    public TextArea fName;
+    public TextArea lName;
+    public TextArea loc;
+    public DatePicker dob;
+    public RadioButton standard;
+    public RadioButton family;
+    public RadioButton premium;
+
+
 
     @FXML
-    protected void onAddButtonClick() {
-        tempText.setText("Enter in the following to register: ");
-        add();
+    protected void onAddButtonClick(ActionEvent event) {
+        if(standard.isSelected()) {
+            membershipType = MembershipType.STANDARD;
+        }
+        else if(family.isSelected()) {
+            membershipType = MembershipType.FAMILY;
+        }
+        else if(premium.isSelected()) {
+            membershipType = MembershipType.PREMIUM;
+        }
+
+        Date dobTest = new Date(dob.getValue().getMonthValue(), dob.getValue().getDayOfMonth(), dob.getValue().getYear());
+
+        //registrationOutput.setText(add(fName.getText(), lName.getText(), dobTest, loc.getText(), membershipType));
+
     }
 
     @FXML
     protected void onRemoveButtonClick() {
-        tempText.setText("Enter in the following to cancel membership: ");
-        remove();
+        
+
     }
 
     @FXML

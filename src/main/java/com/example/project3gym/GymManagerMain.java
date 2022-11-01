@@ -13,7 +13,7 @@ public class GymManagerMain extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GymManagerMain.class.getResource("GymManagerView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320*2, 240*2);
-        stage.setTitle("Hello!");
+        stage.setTitle("GymManagerMain!");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
