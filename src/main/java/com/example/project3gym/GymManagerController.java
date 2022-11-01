@@ -1,8 +1,8 @@
 package com.example.project3gym;
 
+import fitnessmanager.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import fitnessmanager.*;
 
 public class GymManagerController {
     private MemberDatabase db = new MemberDatabase();
@@ -13,7 +13,7 @@ public class GymManagerController {
     @FXML
     protected void onAddButtonClick() {
         tempText.setText("Enter in the following to register: ");
-        add();
+        //add();
 
     }
 
