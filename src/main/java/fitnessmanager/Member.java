@@ -53,6 +53,22 @@ public class Member implements Comparable<Member>{
      * @param fname first name of the member
      * @param lname last name of the member
      * @param dob birthday of the member
+     * @param expire expiration date of the member's gym membership
+     * @param location the gym the member belongs to
+     */
+    public Member(String fname, String lname, Date dob, Date expire, String location){
+        this.fname = fname;
+        this.lname = lname;
+        this.dob = dob;
+        this.expire = expire;
+        this.location = Location.stringToLocation(location);
+    }
+
+    /**
+     * Creates a standard member object
+     * @param fname first name of the member
+     * @param lname last name of the member
+     * @param dob birthday of the member
      */
     public Member(String fname, String lname, String dob){
         this.fname = fname;

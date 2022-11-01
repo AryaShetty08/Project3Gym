@@ -19,6 +19,7 @@ public class GymManagerController {
     @FXML
     protected void onRemoveButtonClick() {
         tempText.setText("Enter in the following to cancel membership: ");
+        remove();
     }
 
     @FXML
@@ -31,7 +32,7 @@ public class GymManagerController {
 
     }
 
-    private String add(String fname, String lname, String dob, String location, MembershipType membershipType){
+    private String add(String fname, String lname, Date dob, String location, MembershipType membershipType){
         String errorMessage = canBeAdded(dob, location);
         if (errorMessage != null){
             return errorMessage;
@@ -59,22 +60,30 @@ public class GymManagerController {
         }
     }
 
-    private String canBeAdded(String dob, String location){
-        Date birthday = new Date(dob);
+    private String canBeAdded(Date birthday, String location){
         if (!birthday.isValid()){                                                       //Checks if birthday date is a valid date
-            return ("DOB " + dob + ": invalid calendar date!");
+            return ("DOB " + birthday.toString() + ": invalid calendar date!");
         }
         Date today = new Date();
         if (birthday.compareTo(today) >= 0){                                            //Checks if birthday date is before today
-            return ("DOB " + dob + ": cannot be today or a future date!");
+            return ("DOB " + birthday.toString() + ": cannot be today or a future date!");
         }
         if (!isOverEighteen(birthday, today)){                                          //Checks if member is over 18
-            return ("DOB " + dob + ": must be 18 or older to join!");
+            return ("DOB " + birthday.toString() + ": must be 18 or older to join!");
         }
         if (Location.stringToLocation(location) == null){                                   //Checks if member's gym location exists
             return (location + ": invalid location!");
         }
         return null;
+    }
+
+    private String remove(String fname, String lname, String dob){
+        if (this.db.remove(new Member(fname, lname, dob))){                                  //Checks if member exists in the database
+            return (fname + " " + lname + " removed.");
+        }
+        else{
+            return (fname + " " + lname + " is not in the database.");
+        }
     }
 
     private Date getExpirationDate(MembershipType membershipType){

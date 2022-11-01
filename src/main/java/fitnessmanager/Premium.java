@@ -33,6 +33,20 @@ public class Premium extends Family{
      * Starts with 3 guest passes (max per premium membership)
      * @param fname first name of the member
      * @param lname last name of the member
+     * @param dob birthday of the member
+     * @param expire expiration date of the member's gym membership
+     * @param location the gym the member belongs to
+     */
+    public Premium(String fname, String lname, Date dob, Date expire, String location){
+        super(fname, lname, dob, expire, location);
+        this.guestPasses = Constant.PREMIUM_MAX_PASS_NUM.getValue();
+    }
+
+    /**
+     * Creates a premium member object
+     * Starts with 3 guest passes (max per premium membership)
+     * @param fname first name of the member
+     * @param lname last name of the member
      */
     public Premium(String fname, String lname){
         super(fname, lname);

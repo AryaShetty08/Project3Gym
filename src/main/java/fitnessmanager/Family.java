@@ -34,6 +34,20 @@ public class Family extends Member{
      * Starts with 1 guest pass (max per family membership)
      * @param fname first name of the member
      * @param lname last name of the member
+     * @param dob birthday of the member
+     * @param expire expiration date of the member's gym membership
+     * @param location the gym the member belongs to
+     */
+    public Family(String fname, String lname, Date dob, Date expire, String location){
+        super(fname, lname, dob, expire, location);
+        this.guestPasses = Constant.FAMILY_MAX_PASS_NUM.getValue();
+    }
+
+    /**
+     * Creates a family member object
+     * Starts with 1 guest pass (max per family membership)
+     * @param fname first name of the member
+     * @param lname last name of the member
      */
     public Family(String fname, String lname){
         super(fname, lname);
