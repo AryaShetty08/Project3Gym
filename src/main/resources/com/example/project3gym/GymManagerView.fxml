@@ -37,7 +37,7 @@
                         <Label text="First Name:" />
                         <Label text="Last Name:" GridPane.rowIndex="1" />
                         <TextArea fx:id="fName" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
-                        <TextArea prefHeight="2.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextArea fx:id="lName" prefHeight="2.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                   <GridPane layoutX="200.0" layoutY="193.0">
@@ -56,7 +56,8 @@
                         <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
-                  <Label layoutX="217.0" layoutY="14.0" text="Follow Steps Below to Register " />
+                  <Label alignment="CENTER" layoutX="259.0" layoutY="14.0" prefHeight="46.0" prefWidth="82.0" text="Add Member:" />
+                  <Label alignment="CENTER" layoutX="212.0" layoutY="60.0" prefHeight="0.0" prefWidth="176.0" text="Fill out following information" textAlignment="JUSTIFY" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -147,7 +148,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button mnemonicParsing="false" text="Unsorted" />
+                        <Button alignment="CENTER" mnemonicParsing="false" text="Unsorted" textAlignment="CENTER" />
                         <Button mnemonicParsing="false" text="Sort by County" GridPane.columnIndex="1" />
                         <Button mnemonicParsing="false" text="Sort by Name" GridPane.rowIndex="1" />
                         <Button mnemonicParsing="false" text="Sort by Expiration Date" GridPane.columnIndex="1" GridPane.rowIndex="1" />
