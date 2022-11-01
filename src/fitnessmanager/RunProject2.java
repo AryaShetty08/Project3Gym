@@ -6,6 +6,6 @@ package fitnessmanager;
  */
 public class RunProject2 {
     public static void main(String[] args){
-        new GymManager().run();
+        System.out.println("Hello World");
     }
 }
