@@ -11,11 +11,14 @@ public class GymManagerController {
     @FXML
     private Label registrationOutput;
     private MembershipType membershipType;
-    public Button addButton;
+    public Label unenrollOutput;
     public TextArea fName;
+    public TextArea fName1;
     public TextArea lName;
+    public TextArea lName1;
     public TextArea loc;
     public DatePicker dob;
+    public DatePicker dob1;
     public RadioButton standard;
     public RadioButton family;
     public RadioButton premium;
@@ -24,26 +27,69 @@ public class GymManagerController {
 
     @FXML
     protected void onAddButtonClick(ActionEvent event) {
-        if(standard.isSelected()) {
-            membershipType = MembershipType.STANDARD;
-        }
-        else if(family.isSelected()) {
-            membershipType = MembershipType.FAMILY;
-        }
-        else if(premium.isSelected()) {
-            membershipType = MembershipType.PREMIUM;
-        }
+        if(checkAddRequirements()) {
+            if (standard.isSelected()) {
+                membershipType = MembershipType.STANDARD;
+            } else if (family.isSelected()) {
+                membershipType = MembershipType.FAMILY;
+            } else if (premium.isSelected()) {
+                membershipType = MembershipType.PREMIUM;
+            }
 
-        Date dobTest = new Date(dob.getValue().getMonthValue(), dob.getValue().getDayOfMonth(), dob.getValue().getYear());
+            Date dobTest = new Date(dob.getValue().getMonthValue(), dob.getValue().getDayOfMonth(), dob.getValue().getYear());
 
-        registrationOutput.setText(add(fName.getText(), lName.getText(), dobTest, loc.getText(), membershipType));
+            registrationOutput.setText(add(fName.getText(), lName.getText(), dobTest, loc.getText(), membershipType));
+        }
+    }
 
+    private boolean checkAddRequirements() {
+        if(fName.getText().isEmpty()) {
+            registrationOutput.setText("Please enter your first name");
+            return false;
+        }
+        else if(lName.getText().isEmpty()) {
+            registrationOutput.setText("Please enter your last name");
+            return false;
+        }
+        else if(dob.getValue() == null) {
+            registrationOutput.setText("Please enter in a valid date of birth");
+            return false;
+        }
+        else if(!(standard.isSelected() || family.isSelected() || premium.isSelected()))
+        {
+            registrationOutput.setText("Please choose a membership");
+            return false;
+        }
+        else if(loc.getText().isEmpty()) {
+            registrationOutput.setText("Please enter in a gym location");
+            return false;
+        }
+        return true;
     }
 
     @FXML
     protected void onRemoveButtonClick() {
-        
+        if(checkRemoveRequirements()) {
+            Date dobTest = new Date(dob1.getValue().getMonthValue(), dob1.getValue().getDayOfMonth(), dob1.getValue().getYear());
 
+            unenrollOutput.setText(remove(fName1.getText(), lName1.getText(), dobTest.toString()));
+        }
+    }
+
+    private boolean checkRemoveRequirements() {
+        if(fName1.getText().isEmpty()) {
+            unenrollOutput.setText("Please enter your first name");
+            return false;
+        }
+        else if(lName1.getText().isEmpty()) {
+            unenrollOutput.setText("Please enter your last name");
+            return false;
+        }
+        else if(dob1.getValue() == null) {
+            unenrollOutput.setText("Please enter in a valid date of birth");
+            return false;
+        }
+        return true;
     }
 
     @FXML
@@ -55,6 +101,7 @@ public class GymManagerController {
     protected void onDisplayButtonClick() {
 
     }
+
 
     private String add(String fname, String lname, Date dob, String location, MembershipType membershipType){
         String errorMessage = canBeAdded(dob, location);

@@ -75,16 +75,16 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <DatePicker fx:id="dob1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="Date of Birth:" GridPane.rowIndex="2" />
                         <Label text="First Name:" />
                         <Label text="Last Name:" GridPane.rowIndex="1" />
                         <TextArea fx:id="fName1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
-                        <TextArea prefHeight="2.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextArea fx:id="lName1" prefHeight="2.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
-                  <Label fx:id="tempText1" layoutX="281.0" layoutY="327.0" prefHeight="18.0" prefWidth="18.0" />
-                  <Button layoutX="264.0" layoutY="302.0" mnemonicParsing="false" text="Delete" />
+                  <Label fx:id="unenrollOutput" layoutX="177.0" layoutY="338.0" prefHeight="18.0" prefWidth="223.0" />
+                  <Button layoutX="264.0" layoutY="302.0" mnemonicParsing="false" onAction="#onRemoveButtonClick" text="Delete" />
                   <Label layoutX="227.0" layoutY="14.0" text="Enter info to leave gym:" />
                </children></AnchorPane>
       </content>
