@@ -42,7 +42,9 @@ public class GymManagerController {
     public RadioButton normalList;
     public RadioButton feeList;
     public RadioButton fitnessList;
+    public RadioButton scheduleList;
     public CheckBox guest;
+
 
     @FXML
     protected void onPrintButtonClick(){
