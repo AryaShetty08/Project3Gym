@@ -11,8 +11,9 @@ public class GymManagerController {
     @FXML
     private Label registrationOutput;
     private MembershipType membershipType;
+    public TextArea printOutput;
     public Label unenrollOutput;
-    private Label checkOutput;
+    public Label checkOutput;
     public TextArea fName;
     public TextArea fName1;
     public TextArea fName2;
@@ -29,9 +30,55 @@ public class GymManagerController {
     public RadioButton standard;
     public RadioButton family;
     public RadioButton premium;
+    public RadioButton unsortedList;
+    public RadioButton countyList;
+    public RadioButton nameList;
+    public RadioButton expireList;
+    public RadioButton normalList;
+    public RadioButton feeList;
+    public RadioButton fitnessList;
     public CheckBox guest;
 
+    @FXML
+    protected void onPrintButtonClick(){
+        if(unsortedList.isSelected()){
+            checkOutput.setText(printMemberList() + "  hello ");
+        }
+//        else if(countyList.isSelected()){
+//
+//        }
+//        else if(nameList.isSelected()){
+//
+//        }
+//        else if(expireList.isSelected()){
+//
+//        }
+//        else if(normalList.isSelected()){
+//
+//        }
+//        else if(feeList.isSelected()){
+//
+//        }
+//        else if(fitnessList.isSelected()){
+//            //checkOutput.setText(printFitnessClass());
+//        }
+    }
 
+    /**
+     * Prints out unsorted list of members
+     * Checks if list is empty,
+     * if not, prints unsorted list of members
+     */
+    private String printMemberList(){
+        String toReturn = "";
+        if (this.db.isEmpty()){
+            return "Member Database is empty!" + "\n";
+        }
+        toReturn = toReturn + "-list of members-" + "\n";
+        toReturn = toReturn + this.db.print() + "\n";
+        toReturn = toReturn + "-end of list-" + "\n";
+        return toReturn;
+    }
 
     @FXML
     protected void onAddButtonClick(ActionEvent event) {

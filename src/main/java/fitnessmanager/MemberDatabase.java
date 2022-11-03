@@ -120,10 +120,12 @@ public class MemberDatabase {
     /**
      * Prints out unsorted list of members
      */
-    public void print() {
+    public String print() {
+        String toReturn = "";
         for (int i = 0; i < this.size; i++) {
-            System.out.println(this.mlist[i].toString());
+            toReturn = toReturn + this.mlist[i].toString() + "\n";
         }
+        return toReturn;
     }
 
     /**
