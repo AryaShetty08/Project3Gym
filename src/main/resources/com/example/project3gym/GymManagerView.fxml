@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3gym.GymManagerController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3gym.GymManagerController">
   <tabs>
     <Tab text="Register">
       <content>
@@ -108,27 +119,27 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <DatePicker fx:id="dob2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="Date of Birth:" GridPane.rowIndex="2" />
                         <Label text="First Name:" />
                         <Label text="Last Name:" GridPane.rowIndex="1" />
                         <TextArea fx:id="fName2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
-                        <TextArea prefHeight="2.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextArea fx:id="lName2" prefHeight="2.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="Class Name:" GridPane.rowIndex="4" />
                         <Label text="Location:" GridPane.rowIndex="3" />
                         <Label text="Class Instructor:" GridPane.rowIndex="5" />
                         <Label GridPane.rowIndex="6" />
-                        <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextArea fx:id="className" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextArea fx:id="instructor" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextArea fx:id="loc2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label text="Guest:" GridPane.rowIndex="6" />
-                        <CheckBox mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <CheckBox fx:id="guest" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                      </children>
                   </GridPane>
                   <Label layoutX="193.0" layoutY="14.0" text="Enter Info to check in/check out of class:" />
-                  <Button layoutX="193.0" layoutY="313.0" mnemonicParsing="false" text="Check In" />
-                  <Button layoutX="355.0" layoutY="313.0" mnemonicParsing="false" text="Check Out" />
-                  <Label layoutX="300.0" layoutY="339.0" text="Label" />
+                  <Button layoutX="193.0" layoutY="313.0" mnemonicParsing="false" onAction="#onCheckInButtonClick" text="Check In" />
+                  <Button layoutX="355.0" layoutY="313.0" mnemonicParsing="false" onAction="#onCheckOutButtonClick" text="Check Out" />
+                  <Label fx:id="checkOutput" layoutX="300.0" layoutY="339.0" text="Label" />
                </children></AnchorPane>
         </content>
       </Tab>

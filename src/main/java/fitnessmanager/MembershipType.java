@@ -7,5 +7,7 @@ package fitnessmanager;
 public enum MembershipType {
     STANDARD,
     FAMILY,
-    PREMIUM
+    PREMIUM;
+
+
 }
