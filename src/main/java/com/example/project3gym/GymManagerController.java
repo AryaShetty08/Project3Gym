@@ -127,7 +127,7 @@ public class GymManagerController {
         toReturn = toReturn + ("-list of members with membership fees-") + "\n";
         toReturn = toReturn + this.db.printWithFees();
         toReturn = toReturn + ("-end of list-") + "\n";
-        return toReturn
+        return toReturn;
     }
 
     /**
@@ -143,7 +143,7 @@ public class GymManagerController {
         toReturn = toReturn + ("-Fitness classes-") + "\n";
         toReturn = toReturn + cs.printClasses();
         toReturn = toReturn + ("-end of class list.") + "\n";
-        return toReturn
+        return toReturn;
     }
 
     @FXML

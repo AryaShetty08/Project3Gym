@@ -131,11 +131,12 @@ public class MemberDatabase {
     /**
      * Prints out unsorted list of members with their fees and guest passes
      */
-    public void printWithFees(){
+    public String printWithFees(){
+        String toReturn = "";
         for (int i = 0; i < this.size; i++) {
-            System.out.println(this.mlist[i].toString() + ", Membership Fee: $"
-                    + this.mlist[i].membershipFee());
+            toReturn = toReturn + this.mlist[i].toString() + ", Membership Fee: $" + this.mlist[i].membershipFee() + "\n";
         }
+        return toReturn;
     }
 
     /**
@@ -151,9 +152,9 @@ public class MemberDatabase {
      * Then prints out list
      * @param category the category to sort members by
      */
-    public void sortedPrint(SortCategory category) {
+    public String sortedPrint(SortCategory category) {
         quickSort(0, this.size - 1, category);
-        print();
+        return print();
     }
 
     /**

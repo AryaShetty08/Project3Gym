@@ -83,25 +83,27 @@ public class ClassSchedule {
      * Includes the class name, instructor name, time,
      * followed by all members and guests that have checked into the class
      */
-    public void printClasses(){
+    public String printClasses(){
+        String toReturn = "";
         for(int classIndex = 0; classIndex < numClasses; classIndex++){
-            System.out.println(classes[classIndex].toString());
+            toReturn = toReturn + classes[classIndex].toString() + "\n";
             if (!classes[classIndex].memberListIsEmpty()){
-                System.out.println("- Participants - ");
+                toReturn = toReturn + "- Participants - " + "\n";
                 int size = classes[classIndex].getMemberListSize();
                 for (int memberIndex = 0; memberIndex < size; memberIndex++){
-                    System.out.println(classes[classIndex].getIndexedMemberFromMemberList(memberIndex).toString());
+                    toReturn = toReturn + classes[classIndex].getIndexedMemberFromMemberList(memberIndex).toString() + "\n";
                 }
             }
             if (!classes[classIndex].guestListIsEmpty()) {
-                System.out.println("- Guests - ");
+                toReturn = toReturn + "- Guests - " + "\n";
                 int size = classes[classIndex].getGuestListSize();
                 for (int guestIndex = 0; guestIndex < size; guestIndex++){
-                    System.out.println(classes[classIndex].getIndexedMemberFromGuestList(guestIndex).toString());
+                    toReturn = toReturn + classes[classIndex].getIndexedMemberFromGuestList(guestIndex).toString() + "\n";
                 }
             }
 
         }
+        return toReturn;
     }
 
     /**
