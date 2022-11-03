@@ -15,7 +15,7 @@ public class GymManagerController {
     @FXML
     private Label registrationOutput;
     private MembershipType membershipType;
-    public Label printOutput;
+    public TextArea printOutput;
     @FXML
     private Label unenrollOutput;
     public Label checkOutput;

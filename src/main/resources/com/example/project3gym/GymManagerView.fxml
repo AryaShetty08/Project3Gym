@@ -162,7 +162,7 @@
                         <RadioButton fx:id="scheduleList" mnemonicParsing="false" text="Print Schedule" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
-                  <VBox layoutX="251.0" layoutY="272.0" prefHeight="44.0" prefWidth="97.0">
+                  <VBox layoutX="261.0" layoutY="264.0" prefHeight="44.0" prefWidth="97.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#onPrintButtonClick" text="Print" />
                      </children>
@@ -172,7 +172,7 @@
                         <Label text="Display Your Member List:" BorderPane.alignment="CENTER" />
                      </left>
                   </BorderPane>
-                  <Label fx:id="printOutput" layoutX="264.0" layoutY="316.0" text="Label" />
+                  <TextArea fx:id="printOutput" layoutX="224.0" layoutY="294.0" prefHeight="63.0" prefWidth="135.0" />
                </children>
             </AnchorPane>
         </content>
