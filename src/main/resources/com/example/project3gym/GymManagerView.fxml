@@ -158,8 +158,8 @@
                         <RadioButton fx:id="expireList" mnemonicParsing="false" text="Sort By Expiration" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <RadioButton fx:id="feeList" mnemonicParsing="false" text="Print Fees" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <RadioButton fx:id="normalList" mnemonicParsing="false" text="Load Member List" toggleGroup="$printType" GridPane.rowIndex="2" />
-                        <RadioButton fx:id="fitnessList" mnemonicParsing="false" text="Load Fitness Class" GridPane.rowIndex="3" />
-                        <RadioButton fx:id="scheduleList" mnemonicParsing="false" text="Print Schedule" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="fitnessList" mnemonicParsing="false" text="Load Fitness Class" toggleGroup="$printType" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="scheduleList" mnemonicParsing="false" text="Print Schedule" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
                   <VBox layoutX="251.0" layoutY="272.0" prefHeight="44.0" prefWidth="97.0">
