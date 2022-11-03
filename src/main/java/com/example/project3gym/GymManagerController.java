@@ -11,8 +11,9 @@ public class GymManagerController {
     @FXML
     private Label registrationOutput;
     private MembershipType membershipType;
-    public TextArea printOutput;
-    public Label unenrollOutput;
+    public Label printOutput;
+    @FXML
+    private Label unenrollOutput;
     public Label checkOutput;
     public TextArea fName;
     public TextArea fName1;
@@ -42,26 +43,26 @@ public class GymManagerController {
     @FXML
     protected void onPrintButtonClick(){
         if(unsortedList.isSelected()){
-            checkOutput.setText(printMemberList() + "  hello ");
+            printOutput.setText(printMemberList());
         }
-//        else if(countyList.isSelected()){
-//
-//        }
-//        else if(nameList.isSelected()){
-//
-//        }
-//        else if(expireList.isSelected()){
-//
-//        }
-//        else if(normalList.isSelected()){
-//
-//        }
-//        else if(feeList.isSelected()){
-//
-//        }
-//        else if(fitnessList.isSelected()){
-//            //checkOutput.setText(printFitnessClass());
-//        }
+        else if(countyList.isSelected()){
+            printOutput.setText(printSortedMemberList(SortCategory.COUNTY));
+        }
+        else if(nameList.isSelected()){
+            printOutput.setText(printSortedMemberList(SortCategory.NAME));
+        }
+        else if(expireList.isSelected()){
+            printOutput.setText(printSortedMemberList(SortCategory.EXPIRATION_DATE));
+        }
+        else if(normalList.isSelected()){
+
+        }
+        else if(feeList.isSelected()){
+            printOutput.setText(printMemberWithFees());
+        }
+        else if(fitnessList.isSelected()){
+            //checkOutput.setText(printFitnessClass());
+        }
     }
 
     /**
@@ -78,6 +79,71 @@ public class GymManagerController {
         toReturn = toReturn + this.db.print() + "\n";
         toReturn = toReturn + "-end of list-" + "\n";
         return toReturn;
+    }
+
+    /**
+     * Prints out sorted list of members ordered by county their gym is in (alphabetically),
+     * Sorts can be based on
+     * - county and zip code
+     * - membership expiration date
+     * - name of members
+     * First checks if list is empty,
+     * if not, prints list sorted by input parameter
+     * @param category the category the members are sorted by
+     */
+    private String printSortedMemberList(SortCategory category){
+        if (this.db.isEmpty()){
+            return ("Member Database is empty!") + "\n";
+        }
+        String toReturn = "";
+        switch (category){
+            case COUNTY:
+                toReturn = toReturn + ("-list of members sorted by county and zipcode-") + "\n";
+                toReturn = toReturn + this.db.sortedPrint(SortCategory.COUNTY);
+                break;
+            case NAME:
+                toReturn = toReturn + ("-list of members sorted by last name, and first name-") + "\n";
+                toReturn = toReturn + this.db.sortedPrint(SortCategory.NAME);
+                break;
+            case EXPIRATION_DATE:
+                toReturn = toReturn + ("-list of members sorted by membership expiration date-") + "\n";
+                toReturn = toReturn + this.db.sortedPrint(SortCategory.EXPIRATION_DATE);
+                break;
+        }
+        toReturn = toReturn + ("-end of list-") + "\n";
+        return toReturn;
+    }
+
+    /**
+     * Prints out unsorted list of members with their fees and guest passes
+     * Checks if list is empty,
+     * if not, prints unsorted list of members with fees
+     */
+    private String printMemberWithFees(){
+        if (this.db.isEmpty()){
+            return ("Member Database is empty!") + "\n";
+        }
+        String toReturn = "";
+        toReturn = toReturn + ("-list of members with membership fees-") + "\n";
+        toReturn = toReturn + this.db.printWithFees();
+        toReturn = toReturn + ("-end of list-") + "\n";
+        return toReturn
+    }
+
+    /**
+     * Prints the fitness class schedule
+     * Checks if class schedule is empty
+     * If not, prints class schedule
+     */
+    private String printSchedule(){
+        String toReturn = "";
+        if (cs.isEmpty()){
+            return ("Fitness class schedule is empty") + "\n";
+        }
+        toReturn = toReturn + ("-Fitness classes-") + "\n";
+        toReturn = toReturn + cs.printClasses();
+        toReturn = toReturn + ("-end of class list.") + "\n";
+        return toReturn
     }
 
     @FXML

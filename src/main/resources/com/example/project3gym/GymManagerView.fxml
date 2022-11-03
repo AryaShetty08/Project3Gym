@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3gym.GymManagerController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3gym.GymManagerController">
   <tabs>
     <Tab text="Register">
       <content>
@@ -164,14 +164,14 @@
                   <VBox layoutX="251.0" layoutY="272.0" prefHeight="44.0" prefWidth="97.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#onPrintButtonClick" text="Print" />
-                        <TextArea fx:id="printOutput" prefHeight="200.0" prefWidth="200.0" />
                      </children>
                   </VBox>
                   <BorderPane layoutX="223.0" layoutY="31.0" prefHeight="101.0" prefWidth="69.0">
                      <left>
-                        <Label text="DIsplay Your Member List:" BorderPane.alignment="CENTER" />
+                        <Label text="Display Your Member List:" BorderPane.alignment="CENTER" />
                      </left>
                   </BorderPane>
+                  <Label fx:id="printOutput" layoutX="264.0" layoutY="316.0" text="Label" />
                </children>
             </AnchorPane>
         </content>
