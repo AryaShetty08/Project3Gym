@@ -5,6 +5,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class GymManagerController {
     private MemberDatabase db = new MemberDatabase();
     private ClassSchedule cs = new ClassSchedule();
@@ -144,6 +148,58 @@ public class GymManagerController {
         toReturn = toReturn + cs.printClasses();
         toReturn = toReturn + ("-end of class list.") + "\n";
         return toReturn;
+    }
+
+    /**
+     * Loads the fitness class schedule
+     * Imports classes from "classSchedule.txt"
+     */
+    private String loadSchedule(){
+        String toReturn = "";
+        try {
+            File classSchedule = new File(".\\classSchedule.txt");
+            Scanner sc = new Scanner(classSchedule);
+            toReturn = toReturn + ("-Fitness classes loaded-") + "\n";
+            while (sc.hasNext()){
+                FitnessClass fc = new FitnessClass(sc.next(), sc.next(), sc.next(), sc.next());
+                this.cs.addClass(fc);
+            }
+            toReturn = toReturn + cs.printClasses();
+            toReturn = toReturn + ("-end of class list.") + "\n";
+            sc.close();
+        }
+        catch(FileNotFoundException e) {
+            toReturn = toReturn + ("File Not Found!") + "\n";
+        }
+        finally {
+            return toReturn;
+        }
+    }
+
+    /**
+     * Loads a list of members to the database
+     * Imports members from "memberList.txt"
+     */
+    private String loadMemberList(){
+        String toReturn = "";
+        try {
+            File memberList = new File(".\\memberList.txt");
+            Scanner sc = new Scanner(memberList);
+            toReturn = toReturn + ("-list of members loaded-") + "\n";
+            while (sc.hasNext()){
+                Member toAdd = new Member(sc.next(), sc.next(), sc.next(), sc.next(), sc.next());
+                db.add(toAdd);
+                toReturn = toReturn + (toAdd.toString()) + "\n";
+            }
+            toReturn = toReturn + ("-end of list-") + "\n";
+            sc.close();
+        }
+        catch(FileNotFoundException e) {
+            toReturn = toReturn + ("File Not Found!") + "\n";
+        }
+        finally {
+            return toReturn;
+        }
     }
 
     @FXML
