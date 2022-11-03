@@ -61,13 +61,16 @@ public class GymManagerController {
             printOutput.setText(printSortedMemberList(SortCategory.EXPIRATION_DATE));
         }
         else if(normalList.isSelected()){
-
+            printOutput.setText(loadMemberList());
         }
         else if(feeList.isSelected()){
             printOutput.setText(printMemberWithFees());
         }
         else if(fitnessList.isSelected()){
-            //checkOutput.setText(printFitnessClass());
+            printOutput.setText(loadSchedule());
+        }
+        else if(scheduleList.isSelected()){
+            printOutput.setText(printSchedule());
         }
     }
 
