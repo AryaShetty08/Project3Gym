@@ -1,6 +1,7 @@
 package com.example.project3gym;
 
 import fitnessmanager.*;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -44,7 +45,7 @@ public class GymManagerController {
     public RadioButton fitnessList;
     public RadioButton scheduleList;
     public CheckBox guest;
-
+    public TextArea loadOutput;
 
     @FXML
     protected void onPrintButtonClick(){
@@ -60,17 +61,21 @@ public class GymManagerController {
         else if(expireList.isSelected()){
             printOutput.setText(printSortedMemberList(SortCategory.EXPIRATION_DATE));
         }
-        else if(normalList.isSelected()){
-            printOutput.setText(loadMemberList());
-        }
         else if(feeList.isSelected()){
             printOutput.setText(printMemberWithFees());
         }
-        else if(fitnessList.isSelected()){
-            printOutput.setText(loadSchedule());
-        }
         else if(scheduleList.isSelected()){
             printOutput.setText(printSchedule());
+        }
+    }
+
+    @FXML
+    protected void onLoadButtonClick(){
+        if(normalList.isSelected()){
+            loadOutput.setText(loadMemberList());
+        }
+        else if(fitnessList.isSelected()){
+            loadOutput.setText(loadSchedule());
         }
     }
 
