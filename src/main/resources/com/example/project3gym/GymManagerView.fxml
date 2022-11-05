@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="677.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3gym.GymManagerController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="677.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3gym.GymManagerController">
   <tabs>
     <Tab text="Register">
       <content>
@@ -45,11 +33,11 @@
                   <Label layoutX="338.0" layoutY="119.0" text="Membership:" />
                   <RadioButton fx:id="standardToAdd" layoutX="440.0" layoutY="119.0" mnemonicParsing="false" text="Standard">
                      <toggleGroup>
-                        <ToggleGroup fx:id="membershipType" />
+                        <ToggleGroup fx:id="membershipTypeAdd" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="familyToAdd" layoutX="540.0" layoutY="119.0" mnemonicParsing="false" text="Family" toggleGroup="$membershipType" />
-                  <RadioButton fx:id="premiumToAdd" layoutX="440.0" layoutY="152.0" mnemonicParsing="false" text="Premium" toggleGroup="$membershipType" />
+                  <RadioButton fx:id="familyToAdd" layoutX="540.0" layoutY="119.0" mnemonicParsing="false" text="Family" toggleGroup="$membershipTypeAdd" />
+                  <RadioButton fx:id="premiumToAdd" layoutX="440.0" layoutY="152.0" mnemonicParsing="false" text="Premium" toggleGroup="$membershipTypeAdd" />
                   <Label layoutX="339.0" layoutY="188.0" text="Location:" />
                   <Label alignment="CENTER" layoutX="297.0" layoutY="14.0" prefHeight="46.0" prefWidth="82.0" text="Add Member:" />
                   <Label alignment="CENTER" layoutX="250.0" layoutY="60.0" prefHeight="0.0" prefWidth="176.0" text="Fill out following information" textAlignment="JUSTIFY" />
@@ -67,13 +55,13 @@
                      <children>
                         <RadioButton fx:id="locEdisonAdd" mnemonicParsing="false" text="Edison">
                            <toggleGroup>
-                              <ToggleGroup fx:id="locationTyoeAdd" />
+                              <ToggleGroup fx:id="locTypeAdd" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="locBridgewaterAdd" mnemonicParsing="false" text="Bridgewater" toggleGroup="$locationTyoeAdd" GridPane.rowIndex="1" />
-                        <RadioButton fx:id="locFranklinAdd" mnemonicParsing="false" text="Franklin" toggleGroup="$locationTyoeAdd" GridPane.columnIndex="1" />
-                        <RadioButton fx:id="locSomervilleAdd" mnemonicParsing="false" text="Somerville" toggleGroup="$locationTyoeAdd" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <RadioButton fx:id="locPiscatawayAdd" mnemonicParsing="false" text="Piscataway" toggleGroup="$locationTyoeAdd" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="locBridgewaterAdd" mnemonicParsing="false" text="Bridgewater" toggleGroup="$locTypeAdd" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="locFranklinAdd" mnemonicParsing="false" text="Franklin" toggleGroup="$locTypeAdd" GridPane.columnIndex="1" />
+                        <RadioButton fx:id="locSomervilleAdd" mnemonicParsing="false" text="Somerville" toggleGroup="$locTypeAdd" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="locPiscatawayAdd" mnemonicParsing="false" text="Piscataway" toggleGroup="$locTypeAdd" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                   <TextArea fx:id="addOutput" layoutX="53.0" layoutY="325.0" prefHeight="195.0" prefWidth="569.0" />
@@ -154,13 +142,13 @@
                            <children>
                               <RadioButton fx:id="instructorJenniferCheck" mnemonicParsing="false" text="Jennifer">
                                  <toggleGroup>
-                                    <ToggleGroup fx:id="locationType3" />
+                                    <ToggleGroup fx:id="instructorCheck" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="instructorKimCheck" mnemonicParsing="false" text="Kim" toggleGroup="$locationType3" GridPane.rowIndex="1" />
-                              <RadioButton fx:id="instructorDeniseCheck" mnemonicParsing="false" text="Denise" toggleGroup="$locationType3" GridPane.columnIndex="1" />
-                              <RadioButton fx:id="instructorEmmaCheck" mnemonicParsing="false" text="Emma" toggleGroup="$locationType3" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <RadioButton fx:id="instructorDavisCheck" mnemonicParsing="false" text="Davis" toggleGroup="$locationType3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="instructorKimCheck" mnemonicParsing="false" text="Kim" toggleGroup="$instructorCheck" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="instructorDeniseCheck" mnemonicParsing="false" text="Denise" toggleGroup="$instructorCheck" GridPane.columnIndex="1" />
+                              <RadioButton fx:id="instructorEmmaCheck" mnemonicParsing="false" text="Emma" toggleGroup="$instructorCheck" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <RadioButton fx:id="instructorDavisCheck" mnemonicParsing="false" text="Davis" toggleGroup="$instructorCheck" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                         <GridPane prefHeight="76.0" prefWidth="317.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -177,13 +165,13 @@
                            <children>
                               <RadioButton fx:id="locEdisonCheck" mnemonicParsing="false" text="Edison">
                                  <toggleGroup>
-                                    <ToggleGroup fx:id="locationType1" />
+                                    <ToggleGroup fx:id="locationTypeCheck" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="locBridgewaterCheck" mnemonicParsing="false" text="Bridgewater" toggleGroup="$locationType1" GridPane.rowIndex="1" />
-                              <RadioButton fx:id="locFranklinCheck" mnemonicParsing="false" text="Franklin" toggleGroup="$locationType1" GridPane.columnIndex="1" />
-                              <RadioButton fx:id="locSomervilleCheck" mnemonicParsing="false" text="Somerville" toggleGroup="$locationType1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <RadioButton fx:id="locPiscatawayCheck" mnemonicParsing="false" text="Piscataway" toggleGroup="$locationType1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="locBridgewaterCheck" mnemonicParsing="false" text="Bridgewater" toggleGroup="$locationTypeCheck" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="locFranklinCheck" mnemonicParsing="false" text="Franklin" toggleGroup="$locationTypeCheck" GridPane.columnIndex="1" />
+                              <RadioButton fx:id="locSomervilleCheck" mnemonicParsing="false" text="Somerville" toggleGroup="$locationTypeCheck" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <RadioButton fx:id="locPiscatawayCheck" mnemonicParsing="false" text="Piscataway" toggleGroup="$locationTypeCheck" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                         <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
@@ -200,11 +188,11 @@
                            <children>
                               <RadioButton fx:id="cNamePilatesCheck" mnemonicParsing="false" text="Pilates">
                                  <toggleGroup>
-                                    <ToggleGroup fx:id="locationType2" />
+                                    <ToggleGroup fx:id="classTypeCheck" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="cNameCardioCheck" mnemonicParsing="false" text="Cardio" toggleGroup="$locationType2" GridPane.rowIndex="1" />
-                              <RadioButton fx:id="cNameSpinningCheck" mnemonicParsing="false" text="Spinning" toggleGroup="$locationType2" GridPane.columnIndex="1" />
+                              <RadioButton fx:id="cNameCardioCheck" mnemonicParsing="false" text="Cardio" toggleGroup="$classTypeCheck" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="cNameSpinningCheck" mnemonicParsing="false" text="Spinning" toggleGroup="$classTypeCheck" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -216,7 +204,7 @@
                </children></AnchorPane>
         </content>
       </Tab>
-      <Tab text="Fitness Classes">
+      <Tab text="Load">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -231,13 +219,16 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <RadioButton mnemonicParsing="false" text="Load Member List" />
-                        <RadioButton mnemonicParsing="false" text="Load Fitness Class" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="loadMembers" mnemonicParsing="false" text="Load Member List">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="loadType" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="loadClasses" mnemonicParsing="false" text="Load Class Schedule" toggleGroup="$loadType" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                   <Label layoutX="281.0" layoutY="53.0" text="Load Lists To Preview:" />
-                  <Button layoutX="317.0" layoutY="262.0" mnemonicParsing="false" text="Load" />
-                  <TextArea fx:id="printOutput1" layoutX="53.0" layoutY="313.0" prefHeight="195.0" prefWidth="569.0" />
+                  <Button layoutX="317.0" layoutY="262.0" mnemonicParsing="false" onAction="#onLoadButtonClick" text="Load" />
+                  <TextArea fx:id="loadOutput" layoutX="53.0" layoutY="313.0" prefHeight="195.0" prefWidth="569.0" />
                </children>
             </AnchorPane>
         </content>
@@ -252,7 +243,7 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
         </content>
       </Tab>
-      <Tab text="Member List">
+      <Tab text="Print">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -268,21 +259,21 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <RadioButton fx:id="unsortedList" mnemonicParsing="false" text="Unsorted">
+                        <RadioButton fx:id="unsortedList" mnemonicParsing="false" text="Unsorted Member List">
                            <toggleGroup>
                               <ToggleGroup fx:id="printType" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="countyList" mnemonicParsing="false" text="Sort By County" toggleGroup="$printType" GridPane.columnIndex="1" />
-                        <RadioButton fx:id="nameList" mnemonicParsing="false" text="Sort By Name" toggleGroup="$printType" GridPane.rowIndex="1" />
-                        <RadioButton fx:id="expireList" mnemonicParsing="false" text="Sort By Expiration" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <RadioButton fx:id="feeList" mnemonicParsing="false" text="Print Fees" toggleGroup="$printType" GridPane.rowIndex="2" />
-                        <RadioButton fx:id="scheduleList" mnemonicParsing="false" text="Print Schedule" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="countyList" mnemonicParsing="false" text="Member List Sort By County" toggleGroup="$printType" GridPane.columnIndex="1" />
+                        <RadioButton fx:id="nameList" mnemonicParsing="false" text="Member List Sort By Name" toggleGroup="$printType" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="expireList" mnemonicParsing="false" text="Member List Sort By Expiration" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="feeList" mnemonicParsing="false" text="Unsorted Member List w/ Fees" toggleGroup="$printType" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="classSchedule" mnemonicParsing="false" text="Class Schedule" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                   <VBox layoutX="261.0" layoutY="264.0" prefHeight="44.0" prefWidth="97.0" />
                   <TextArea fx:id="printOutput" layoutX="54.0" layoutY="286.0" prefHeight="195.0" prefWidth="569.0" />
-                  <Label layoutX="269.0" layoutY="43.0" text="Display Your Member List:" />
+                  <Label layoutX="269.0" layoutY="43.0" text="Choose Something to Display:" />
                   <Button layoutX="314.0" layoutY="245.0" mnemonicParsing="false" onAction="#onPrintButtonClick" text="Print" />
                </children>
             </AnchorPane>

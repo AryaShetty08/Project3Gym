@@ -16,11 +16,15 @@ public class GymManagerController {
     @FXML
     private DatePicker dobAdd;
     @FXML
+    private ToggleGroup membershipTypeAdd;
+    @FXML
     private RadioButton standardToAdd;
     @FXML
     private RadioButton familyToAdd;
     @FXML
     private RadioButton premiumToAdd;
+    @FXML
+    private ToggleGroup locTypeAdd;
     @FXML
     private RadioButton locEdisonAdd;
     @FXML
@@ -52,6 +56,8 @@ public class GymManagerController {
     @FXML
     private DatePicker dobCheck;
     @FXML
+    private ToggleGroup locationTypeCheck;
+    @FXML
     private RadioButton locEdisonCheck;
     @FXML
     private RadioButton locFranklinCheck;
@@ -61,6 +67,8 @@ public class GymManagerController {
     private RadioButton locPiscatawayCheck;
     @FXML
     private RadioButton locSomervilleCheck;
+    @FXML
+    private ToggleGroup instructorCheck;
     @FXML
     private RadioButton instructorJenniferCheck;
     @FXML
@@ -72,6 +80,8 @@ public class GymManagerController {
     @FXML
     private RadioButton instructorEmmaCheck;
     @FXML
+    private ToggleGroup classTypeCheck;
+    @FXML
     private RadioButton cNamePilatesCheck;
     @FXML
     private RadioButton cNameSpinningCheck;
@@ -82,20 +92,7 @@ public class GymManagerController {
     @FXML
     private TextArea checkOutput;
 
-
-
-
-
-    @FXML
-    private TextArea loc;
-    @FXML
-    private TextArea loc2;
-    @FXML
-    private TextArea className;
-    @FXML
-    private TextArea instructor;
-    @FXML
-    private DatePicker dob2;
+    //Print FXML Variables
     @FXML
     private RadioButton unsortedList;
     @FXML
@@ -105,14 +102,17 @@ public class GymManagerController {
     @FXML
     private RadioButton expireList;
     @FXML
-    private RadioButton normalList;
-    @FXML
     private RadioButton feeList;
     @FXML
-    private RadioButton fitnessList;
+    private RadioButton classSchedule;
     @FXML
-    private RadioButton scheduleList;
+    private TextArea printOutput;
 
+    //Load FXML Variables
+    @FXML
+    private RadioButton loadMembers;
+    @FXML
+    private RadioButton loadClasses;
     @FXML
     private TextArea loadOutput;
 
@@ -276,17 +276,17 @@ public class GymManagerController {
         else if(feeList.isSelected()){
             printOutput.setText(printMemberWithFees());
         }
-        else if(scheduleList.isSelected()){
+        else if(classSchedule.isSelected()){
             printOutput.setText(printSchedule());
         }
     }
 
     @FXML
     protected void onLoadButtonClick(){
-        if(normalList.isSelected()){
+        if(loadMembers.isSelected()){
             loadOutput.setText(db.loadMemberList());
         }
-        else if(fitnessList.isSelected()){
+        else if(loadClasses.isSelected()){
             loadOutput.setText(cs.loadSchedule());
         }
     }
@@ -297,25 +297,25 @@ public class GymManagerController {
     }
 
     private boolean checkAddRequirements() {
-        if(fName.getText().isEmpty()) {
-            registrationOutput.setText("Please enter your first name");
+        if(fNameAdd.getText().isEmpty()) {
+            addOutput.setText("Please enter your first name");
             return false;
         }
-        else if(lName.getText().isEmpty()) {
-            registrationOutput.setText("Please enter your last name");
+        else if(lNameAdd.getText().isEmpty()) {
+            addOutput.setText("Please enter your last name");
             return false;
         }
-        else if(dob.getValue() == null) {
-            registrationOutput.setText("Please enter in a valid date of birth");
+        else if(dobAdd.getValue() == null) {
+            addOutput.setText("Please enter in a valid date of birth");
             return false;
         }
-        else if(!(standard.isSelected() || family.isSelected() || premium.isSelected()))
+        else if(membershipTypeAdd.getSelectedToggle() == null)
         {
-            registrationOutput.setText("Please choose a membership");
+            addOutput.setText("Please choose a membership type");
             return false;
         }
-        else if(loc.getText().isEmpty()) {
-            registrationOutput.setText("Please enter in a gym location");
+        else if(locTypeAdd.getSelectedToggle() == null) {
+            addOutput.setText("Please choose a gym location");
             return false;
         }
         return true;
@@ -390,16 +390,16 @@ public class GymManagerController {
     }
 
     private boolean checkRemoveRequirements() {
-        if(fName1.getText().isEmpty()) {
-            unenrollOutput.setText("Please enter your first name");
+        if(fNameRemove.getText().isEmpty()) {
+            removeOutput.setText("Please enter your first name");
             return false;
         }
-        else if(lName1.getText().isEmpty()) {
-            unenrollOutput.setText("Please enter your last name");
+        else if(lNameRemove.getText().isEmpty()) {
+            removeOutput.setText("Please enter your last name");
             return false;
         }
-        else if(dob1.getValue() == null) {
-            unenrollOutput.setText("Please enter in a valid date of birth");
+        else if(dobRemove.getValue() == null) {
+            removeOutput.setText("Please enter in a valid date of birth");
             return false;
         }
         return true;
@@ -424,28 +424,28 @@ public class GymManagerController {
     }
 
     private boolean checkCheckRequirements() {
-        if(fName2.getText().isEmpty()) {
+        if(fNameCheck.getText().isEmpty()) {
             checkOutput.setText("Please enter your first name");
             return false;
         }
-        else if(lName2.getText().isEmpty()) {
+        else if(lNameCheck.getText().isEmpty()) {
             checkOutput.setText("Please enter your last name");
             return false;
         }
-        else if(dob2.getValue() == null) {
+        else if(dobCheck.getValue() == null) {
             checkOutput.setText("Please enter in a valid date of birth");
             return false;
         }
-        else if(loc2.getText().isEmpty()) {
-            checkOutput.setText("Please enter your membership location");
+        else if(locationTypeCheck.getSelectedToggle() == null) {
+            checkOutput.setText("Please choose a gym location");
             return false;
         }
-        else if(className.getText().isEmpty()) {
-            checkOutput.setText("Please enter class type (e.g. Pilates)");
+        else if(classTypeCheck.getSelectedToggle() == null) {
+            checkOutput.setText("Please choose a class type (e.g. Pilates)");
             return false;
         }
-        else if(instructor.getText().isEmpty()) {
-            checkOutput.setText("Please enter instructor name");
+        else if(instructorCheck.getSelectedToggle() == null) {
+            checkOutput.setText("Please choose an instructor");
             return false;
         }
         return true;
