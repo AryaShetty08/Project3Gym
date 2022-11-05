@@ -79,9 +79,10 @@ public class ClassSchedule {
     }
 
     /**
-     * Prints out schedule of classes for the day the gym is run
+     * Returns schedule of classes for the day the gym is run
      * Includes the class name, instructor name, time,
      * followed by all members and guests that have checked into the class
+     * @return schedule of classes for the day the gym is run
      */
     public String printClasses(){
         String toReturn = "";

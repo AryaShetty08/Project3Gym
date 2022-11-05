@@ -118,7 +118,8 @@ public class MemberDatabase {
     }
 
     /**
-     * Prints out unsorted list of members
+     * Returns unsorted list of members
+     * @return unsorted list of members
      */
     public String print() {
         String toReturn = "";
@@ -129,7 +130,8 @@ public class MemberDatabase {
     }
 
     /**
-     * Prints out unsorted list of members with their fees and guest passes
+     * Returns unsorted list of members with their fees and guest passes
+     * @return unsorted list of members with their fees and guest passes
      */
     public String printWithFees(){
         String toReturn = "";
@@ -140,7 +142,7 @@ public class MemberDatabase {
     }
 
     /**
-     * Prints out sorted list of members
+     * Returns sorted list of members
      * Could be ordered by
      *  - county their gym is in (alphabetically),
      *      if it's the same then it compares the zipcode of the gym location.
@@ -149,8 +151,9 @@ public class MemberDatabase {
      *  - member last name then first name (alphabetically)
      * Sorts the list using a quicksort method,
      * which compares the location stored in the member class,
-     * Then prints out list
+     * Then returns list as String
      * @param category the category to sort members by
+     * @return sorted list of members
      */
     public String sortedPrint(SortCategory category) {
         quickSort(0, this.size - 1, category);
