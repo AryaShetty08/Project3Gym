@@ -76,6 +76,7 @@
                         <RadioButton mnemonicParsing="false" text="Piscataway" toggleGroup="$locationType" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
+                  <TextArea fx:id="printOutput12" layoutX="53.0" layoutY="325.0" prefHeight="195.0" prefWidth="569.0" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -102,9 +103,9 @@
                         <TextArea fx:id="lName1" prefHeight="2.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
-                  <Label fx:id="unenrollOutput" layoutX="177.0" layoutY="338.0" prefHeight="18.0" prefWidth="223.0" />
                   <Button layoutX="313.0" layoutY="262.0" mnemonicParsing="false" onAction="#onRemoveButtonClick" text="Delete" />
                   <Label layoutX="275.0" layoutY="36.0" text="Enter info to leave gym:" />
+                  <TextArea fx:id="printOutput11" layoutX="54.0" layoutY="313.0" prefHeight="195.0" prefWidth="569.0" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -209,9 +210,9 @@
                      </children>
                   </GridPane>
                   <Label layoutX="232.0" layoutY="14.0" text="Enter Info to check in/check out of class:" />
-                  <Button layoutX="476.0" layoutY="396.0" mnemonicParsing="false" onAction="#onCheckInButtonClick" text="Check In" />
-                  <Button layoutX="471.0" layoutY="442.0" mnemonicParsing="false" onAction="#onCheckOutButtonClick" text="Check Out" />
-                  <Label fx:id="checkOutput" layoutX="300.0" layoutY="339.0" />
+                  <Button layoutX="540.0" layoutY="43.0" mnemonicParsing="false" onAction="#onCheckInButtonClick" text="Check In" />
+                  <Button layoutX="535.0" layoutY="69.0" mnemonicParsing="false" onAction="#onCheckOutButtonClick" text="Check Out" />
+                  <TextArea fx:id="printOutput13" layoutX="487.0" layoutY="94.0" prefHeight="258.0" prefWidth="167.0" />
                </children></AnchorPane>
         </content>
       </Tab>
@@ -239,10 +240,8 @@
                         <RadioButton fx:id="countyList" mnemonicParsing="false" text="Sort By County" toggleGroup="$printType" GridPane.columnIndex="1" />
                         <RadioButton fx:id="nameList" mnemonicParsing="false" text="Sort By Name" toggleGroup="$printType" GridPane.rowIndex="1" />
                         <RadioButton fx:id="expireList" mnemonicParsing="false" text="Sort By Expiration" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <RadioButton fx:id="feeList" mnemonicParsing="false" text="Print Fees" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <RadioButton fx:id="normalList" mnemonicParsing="false" text="Load Member List" toggleGroup="$printType" GridPane.rowIndex="2" />
-                        <RadioButton fx:id="fitnessList" mnemonicParsing="false" text="Load Fitness Class" toggleGroup="$printType" GridPane.rowIndex="3" />
-                        <RadioButton fx:id="scheduleList" mnemonicParsing="false" text="Print Schedule" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="feeList" mnemonicParsing="false" text="Print Fees" toggleGroup="$printType" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="scheduleList" mnemonicParsing="false" text="Print Schedule" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                   <VBox layoutX="261.0" layoutY="264.0" prefHeight="44.0" prefWidth="97.0" />
