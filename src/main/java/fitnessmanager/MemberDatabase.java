@@ -1,5 +1,9 @@
 package fitnessmanager;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  * MemberDatabase is a class to store and sort gym members
  * Stores the following data:
@@ -87,6 +91,33 @@ public class MemberDatabase {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Loads a list of members to the database
+     * Imports members from "memberList.txt"
+     * @return String representation of list of members uploaded
+     */
+    public String loadMemberList(){
+        String memberListString = "";
+        try {
+            File memberList = new File(".\\memberList.txt");
+            Scanner sc = new Scanner(memberList);
+            memberListString = memberListString + ("-list of members loaded-") + "\n";
+            while (sc.hasNext()){
+                Member toAdd = new Member(sc.next(), sc.next(), sc.next(), sc.next(), sc.next());
+                add(toAdd);
+                memberListString = memberListString + (toAdd.toString()) + "\n";
+            }
+            memberListString = memberListString + ("-end of list-") + "\n";
+            sc.close();
+        }
+        catch(FileNotFoundException e) {
+            memberListString = memberListString + ("File Not Found!") + "\n";
+        }
+        finally {
+            return memberListString;
+        }
     }
 
     /**
