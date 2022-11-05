@@ -72,10 +72,10 @@ public class GymManagerController {
     @FXML
     protected void onLoadButtonClick(){
         if(normalList.isSelected()){
-            loadOutput.setText(loadMemberList());
+            loadOutput.setText(db.loadMemberList());
         }
         else if(fitnessList.isSelected()){
-            loadOutput.setText(loadSchedule());
+            loadOutput.setText(cs.loadSchedule());
         }
     }
 
@@ -160,60 +160,8 @@ public class GymManagerController {
         return toReturn;
     }
 
-    /**
-     * Loads the fitness class schedule
-     * Imports classes from "classSchedule.txt"
-     */
-    private String loadSchedule(){
-        String toReturn = "";
-        try {
-            File classSchedule = new File(".\\classSchedule.txt");
-            Scanner sc = new Scanner(classSchedule);
-            toReturn = toReturn + ("-Fitness classes loaded-") + "\n";
-            while (sc.hasNext()){
-                FitnessClass fc = new FitnessClass(sc.next(), sc.next(), sc.next(), sc.next());
-                this.cs.addClass(fc);
-            }
-            toReturn = toReturn + cs.printClasses();
-            toReturn = toReturn + ("-end of class list.") + "\n";
-            sc.close();
-        }
-        catch(FileNotFoundException e) {
-            toReturn = toReturn + ("File Not Found!") + "\n";
-        }
-        finally {
-            return toReturn;
-        }
-    }
-
-    /**
-     * Loads a list of members to the database
-     * Imports members from "memberList.txt"
-     */
-    private String loadMemberList(){
-        String toReturn = "";
-        try {
-            File memberList = new File(".\\memberList.txt");
-            Scanner sc = new Scanner(memberList);
-            toReturn = toReturn + ("-list of members loaded-") + "\n";
-            while (sc.hasNext()){
-                Member toAdd = new Member(sc.next(), sc.next(), sc.next(), sc.next(), sc.next());
-                db.add(toAdd);
-                toReturn = toReturn + (toAdd.toString()) + "\n";
-            }
-            toReturn = toReturn + ("-end of list-") + "\n";
-            sc.close();
-        }
-        catch(FileNotFoundException e) {
-            toReturn = toReturn + ("File Not Found!") + "\n";
-        }
-        finally {
-            return toReturn;
-        }
-    }
-
     @FXML
-    protected void onAddButtonClick(ActionEvent event) {
+    protected void onAddButtonClick() {
         if(checkAddRequirements()) {
             if (standard.isSelected()) {
                 membershipType = MembershipType.STANDARD;

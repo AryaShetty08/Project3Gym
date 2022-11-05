@@ -1,5 +1,9 @@
 package fitnessmanager;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  * ClassSchedule is a class to store and sort fitness classes
  * Stores the following data:
@@ -30,6 +34,33 @@ public class ClassSchedule {
         numClasses++;
         if(numClasses == classes.length){
             grow();
+        }
+    }
+
+    /**
+     * Loads the fitness class schedule
+     * Imports classes from "classSchedule.txt"
+     * @return String representation of list of classes uploaded
+     */
+    public String loadSchedule(){
+        String classListString = "";
+        try {
+            File classSchedule = new File(".\\classSchedule.txt");
+            Scanner sc = new Scanner(classSchedule);
+            classListString = classListString + ("-Fitness classes loaded-") + "\n";
+            while (sc.hasNext()){
+                FitnessClass fc = new FitnessClass(sc.next(), sc.next(), sc.next(), sc.next());
+                this.addClass(fc);
+            }
+            classListString = classListString + printClasses();
+            classListString = classListString + ("-end of class list.") + "\n";
+            sc.close();
+        }
+        catch(FileNotFoundException e) {
+            classListString = classListString + ("File Not Found!") + "\n";
+        }
+        finally {
+            return classListString;
         }
     }
 
@@ -79,9 +110,10 @@ public class ClassSchedule {
     }
 
     /**
-     * Prints out schedule of classes for the day the gym is run
+     * Returns schedule of classes for the day the gym is run
      * Includes the class name, instructor name, time,
      * followed by all members and guests that have checked into the class
+     * @return schedule of classes for the day the gym is run
      */
     public String printClasses(){
         String toReturn = "";
