@@ -96,7 +96,8 @@ public class MemberDatabase {
     /**
      * Loads a list of members to the database
      * Imports members from "memberList.txt"
-     * @return String representation of list of members uploaded
+     * @return String representation of list of members uploaded if uploaded
+     *         statement that file isn't found if file isn't found
      */
     public String loadMemberList(){
         String memberListString = "";

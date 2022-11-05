@@ -40,7 +40,8 @@ public class ClassSchedule {
     /**
      * Loads the fitness class schedule
      * Imports classes from "classSchedule.txt"
-     * @return String representation of list of classes uploaded
+     * @return String representation of list of classes uploaded if uploaded
+     *         statement that file isn't found if file isn't found
      */
     public String loadSchedule(){
         String classListString = "";
