@@ -561,12 +561,12 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #c2b1fc;">
                <children>
-                  <Label layoutX="37.0" layoutY="14.0" text="A Little Bit About The Creators:">
+                  <Label layoutX="120.0" text="A Little Bit About The Creators:">
                      <font>
                         <Font name="Segoe UI Black" size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="37.0" layoutY="117.0" prefHeight="110.0" prefWidth="722.0" text="- Arya and John love to go the gym and they hope that&#10;   this program will be able to get you to your goals &#10;">
+                  <Label layoutX="37.0" layoutY="106.0" prefHeight="110.0" prefWidth="722.0" text="- Arya and John love to go the gym and they hope that&#10;   this program will be able to get you to your goals &#10;">
                      <font>
                         <Font name="Segoe UI Black" size="24.0" />
                      </font>
@@ -581,7 +581,7 @@
                         <Image url="@../../../../../../../../../../../../Downloads/46E41688-B228-4779-9D2A-8E801966FD10.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="37.0" layoutY="337.0" prefHeight="36.0" prefWidth="235.0" text="Some of my friends after using the app:">
+                  <Label layoutX="37.0" layoutY="337.0" prefHeight="36.0" prefWidth="235.0" text="Users of the app:">
                      <font>
                         <Font name="Segoe UI Black" size="12.0" />
                      </font>

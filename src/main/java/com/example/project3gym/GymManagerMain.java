@@ -24,9 +24,9 @@ public class GymManagerMain extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GymManagerMain.class.getResource("GymManagerView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 425*2, 330*2);
+        Scene scene = new Scene(fxmlLoader.load(), 800, 671);
         stage.setTitle("GymManagerMain!");
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.setScene(scene);
         stage.show();
     }

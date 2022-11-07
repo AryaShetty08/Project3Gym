@@ -4,6 +4,14 @@ import fitnessmanager.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+/**
+ * The main controller class for the scene builder class
+ * It converts all the functionality of the old gym manager class
+ * into UI based output instead of terminal based
+ * It still includes commands relating to gym member management,
+ * such as Add Member, Remove Member, Check In Member and more
+ * @author Arya Shetty, John Greaney-Cheng
+ */
 public class GymManagerController {
     private MemberDatabase db = new MemberDatabase();
     private ClassSchedule cs = new ClassSchedule();
@@ -116,6 +124,13 @@ public class GymManagerController {
     @FXML
     private TextArea loadOutput;
 
+    /**
+     * A method that is run when the add button is clicked if conditions are met:
+     * Helper method that checks if all fields are filled returns true,
+     * and if the inputted data is all valid and matches with a member in a class
+     * Finally it uses the add method in manager and outputs the result into the
+     * text area on the register tab
+     */
     @FXML
     protected void onAddButtonClick() {
         if(checkAddRequirements()) {
@@ -148,6 +163,13 @@ public class GymManagerController {
         }
     }
 
+    /**
+     * A method that is run when the remove button is clicked if conditions are met:
+     * Helper method that checks if all fields are filled returns true,
+     * and if the inputted data is all valid and matches with a member in a class
+     * Finally it uses the remove method in manager and outputs the result into the
+     * text area on the unenroll tab
+     */
     @FXML
     protected void onRemoveButtonClick() {
         if(checkRemoveRequirements()) {
@@ -157,6 +179,13 @@ public class GymManagerController {
         }
     }
 
+    /**
+     * A method that is run when the check in button is clicked if conditions are met:
+     * Helper method that checks if all fields are filled returns true,
+     * and if the inputted data is all valid and matches with a member in a class
+     * Finally if it's a guest it uses the guest check in method and outputs into the
+     * text area on the check in/out tab, otherwise it outputs the normal check in result
+     */
     @FXML
     protected void onCheckInButtonClick(){
         if (checkCheckRequirements()){
@@ -208,6 +237,13 @@ public class GymManagerController {
         }
     }
 
+    /**
+     * A method that is run when the checkout button is clicked if conditions are met:
+     * Helper method that checks if all fields are filled returns true,
+     * and if the inputted data is all valid and matches with a member in a class
+     * Finally if it's a guest it uses the guest checkout method and outputs into the
+     * text area on the check in/out tab, otherwise it outputs the normal checkout result
+     */
     @FXML
     protected void onCheckOutButtonClick(){
         if (checkCheckRequirements()){
@@ -259,6 +295,13 @@ public class GymManagerController {
         }
     }
 
+    /**
+     * A method that is run when the print button is clicked if conditions are met:
+     * One of the radio buttons has to be selected otherwise nothing will be
+     * outputted into the text area in the print tab
+     * If one of the buttons is used the corresponding method in manager is used
+     * to output the member list or class list in a certain order
+     */
     @FXML
     protected void onPrintButtonClick(){
         if(unsortedList.isSelected()){
@@ -281,6 +324,12 @@ public class GymManagerController {
         }
     }
 
+    /**
+     * A method that runs when the load button is clicked
+     * and one of the radio buttons is chosen, 'load members' or 'load classes'
+     * It outputs a member list or class list from files in the program files
+     * into the text area in the load tab
+     */
     @FXML
     protected void onLoadButtonClick(){
         if(loadMembers.isSelected()){
@@ -291,11 +340,25 @@ public class GymManagerController {
         }
     }
 
+    /**
+     * A method that runs when the quit tab is clicked
+     * Instantly closes the application even if 'x' button isn't clicked
+     */
     @FXML
     protected void onQuitButtonClick() {
         System.exit(0);
     }
 
+    /**
+     * A helper method of the add method in manager
+     * Makes sure all fields are filled before implementing into member database
+     * Conditions include:
+     * - first name and last name is filled out
+     * - a choice has been picked for date, membership type, and location
+     * @return boolean, false if one of the fields has not been filled out
+     *         and sends text to be outputted explaining which field has not been filled,
+     *         true if everything has been filled out and can be implemented to the add method
+     */
     private boolean checkAddRequirements() {
         if(fNameAdd.getText().isEmpty()) {
             addOutput.setText("Please enter your first name");
@@ -389,6 +452,16 @@ public class GymManagerController {
         return null;
     }
 
+    /**
+     * A helper method of the remove member method of the manager
+     * Makes sure all fields are filled before trying to find the member in database
+     * Conditions include:
+     * - first name and last name is filled out
+     * - a choice has been picked for date
+     * @return boolean, false if one of the fields has not been filled out
+     *         and sends text to be outputted explaining which field has not been filled,
+     *         true if everything has been filled out and can be implemented to the remove method
+     */
     private boolean checkRemoveRequirements() {
         if(fNameRemove.getText().isEmpty()) {
             removeOutput.setText("Please enter your first name");
@@ -423,6 +496,16 @@ public class GymManagerController {
         }
     }
 
+    /**
+     * A helper method of the check in/check out methods of manager
+     * Makes sure all fields are filled before implementing into database of classes
+     * Conditions include:
+     * - first name and last name is filled out
+     * - a choice has been picked for date, location, class, and instructor
+     * @return boolean, false if one of the fields has not been filled out
+     *         and sends text to be outputted explaining which field has not been filled,
+     *         true if everything has been filled out and can be implemented to the check in/out method
+     */
     private boolean checkCheckRequirements() {
         if(fNameCheck.getText().isEmpty()) {
             checkOutput.setText("Please enter your first name");
