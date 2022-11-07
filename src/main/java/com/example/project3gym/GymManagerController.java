@@ -190,44 +190,9 @@ public class GymManagerController {
     protected void onCheckInButtonClick(){
         if (checkCheckRequirements()){
             Date dobTest = new Date(dobCheck.getValue().getMonthValue(), dobCheck.getValue().getDayOfMonth(), dobCheck.getValue().getYear());
-            Location location;
-            if (locEdisonCheck.isSelected()){
-                location = Location.EDISON;
-            } else if (locFranklinCheck.isSelected()){
-                location = Location.FRANKLIN;
-            } else if (locBridgewaterCheck.isSelected()){
-                location = Location.BRIDGEWATER;
-            } else if (locPiscatawayCheck.isSelected()){
-                location = Location.PISCATAWAY;
-            } else if (locSomervilleCheck.isSelected()){
-                location = Location.SOMERVILLE;
-            } else {
-                location = null;
-            }
-            ClassName className;
-            if (cNamePilatesCheck.isSelected()){
-                className = ClassName.PILATES;
-            } else if (cNameSpinningCheck.isSelected()){
-                className = ClassName.SPINNING;
-            } else if (cNameCardioCheck.isSelected()){
-                className = ClassName.CARDIO;
-            } else {
-                className = null;
-            }
-            Instructor instructor;
-            if (instructorJenniferCheck.isSelected()){
-                instructor = Instructor.JENNIFER;
-            } else if (instructorDeniseCheck.isSelected()){
-                instructor = Instructor.DENISE;
-            } else if (instructorKimCheck.isSelected()){
-                instructor = Instructor.KIM;
-            } else if (instructorDavisCheck.isSelected()){
-                instructor = Instructor.DAVIS;
-            } else if (instructorEmmaCheck.isSelected()){
-                instructor = Instructor.EMMA;
-            } else {
-                instructor = null;
-            }
+            Location location = getCheckLocation();
+            ClassName className = getCheckClassName();
+            Instructor instructor = getCheckInstructor();
             if (!guest.isSelected()){
                 checkOutput.setText(checkIn(className.name(), instructor.name(), location.name(), fNameCheck.getText(), lNameCheck.getText(), dobTest.toString()));
             }
@@ -248,44 +213,9 @@ public class GymManagerController {
     protected void onCheckOutButtonClick(){
         if (checkCheckRequirements()){
             Date dobTest = new Date(dobCheck.getValue().getMonthValue(), dobCheck.getValue().getDayOfMonth(), dobCheck.getValue().getYear());
-            Location location;
-            if (locEdisonCheck.isSelected()){
-                location = Location.EDISON;
-            } else if (locFranklinCheck.isSelected()){
-                location = Location.FRANKLIN;
-            } else if (locBridgewaterCheck.isSelected()){
-                location = Location.BRIDGEWATER;
-            } else if (locPiscatawayCheck.isSelected()){
-                location = Location.PISCATAWAY;
-            } else if (locSomervilleCheck.isSelected()){
-                location = Location.SOMERVILLE;
-            } else {
-                location = null;
-            }
-            ClassName className;
-            if (cNamePilatesCheck.isSelected()){
-                className = ClassName.PILATES;
-            } else if (cNameSpinningCheck.isSelected()){
-                className = ClassName.SPINNING;
-            } else if (cNameCardioCheck.isSelected()){
-                className = ClassName.CARDIO;
-            } else {
-                className = null;
-            }
-            Instructor instructor;
-            if (instructorJenniferCheck.isSelected()){
-                instructor = Instructor.JENNIFER;
-            } else if (instructorDeniseCheck.isSelected()){
-                instructor = Instructor.DENISE;
-            } else if (instructorKimCheck.isSelected()){
-                instructor = Instructor.KIM;
-            } else if (instructorDavisCheck.isSelected()){
-                instructor = Instructor.DAVIS;
-            } else if (instructorEmmaCheck.isSelected()){
-                instructor = Instructor.EMMA;
-            } else {
-                instructor = null;
-            }
+            Location location = getCheckLocation();
+            ClassName className = getCheckClassName();
+            Instructor instructor = getCheckInstructor();
             if (!guest.isSelected()){
                 checkOutput.setText(checkOut(className.name(), instructor.name(), location.name(), fNameCheck.getText(), lNameCheck.getText(), dobTest.toString()));
             }
@@ -937,5 +867,67 @@ public class GymManagerController {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Helper method that returns location for Check In/Check Out
+     * @return location for Check In/Check Out
+     */
+    private Location getCheckLocation(){
+        Location location;
+        if (locEdisonCheck.isSelected()){
+            location = Location.EDISON;
+        } else if (locFranklinCheck.isSelected()){
+            location = Location.FRANKLIN;
+        } else if (locBridgewaterCheck.isSelected()){
+            location = Location.BRIDGEWATER;
+        } else if (locPiscatawayCheck.isSelected()){
+            location = Location.PISCATAWAY;
+        } else if (locSomervilleCheck.isSelected()){
+            location = Location.SOMERVILLE;
+        } else {
+            location = null;
+        }
+        return location;
+    }
+
+    /**
+     * Helper method that returns class type for Check In/Check Out
+     * @return class type for Check In/Check Out
+     */
+    private ClassName getCheckClassName(){
+        ClassName className;
+        if (cNamePilatesCheck.isSelected()){
+            className = ClassName.PILATES;
+        } else if (cNameSpinningCheck.isSelected()){
+            className = ClassName.SPINNING;
+        } else if (cNameCardioCheck.isSelected()){
+            className = ClassName.CARDIO;
+        } else {
+            className = null;
+        }
+        return className;
+    }
+
+    /**
+     * Helper method that returns instructor for Check In/Check Out
+     * @return instructor for Check In/Check Out
+     */
+    private Instructor getCheckInstructor(){
+        Instructor instructor;
+        if (instructorJenniferCheck.isSelected()){
+            instructor = Instructor.JENNIFER;
+        } else if (instructorDeniseCheck.isSelected()){
+            instructor = Instructor.DENISE;
+        } else if (instructorKimCheck.isSelected()){
+            instructor = Instructor.KIM;
+        } else if (instructorDavisCheck.isSelected()){
+            instructor = Instructor.DAVIS;
+        } else if (instructorEmmaCheck.isSelected()){
+            instructor = Instructor.EMMA;
+        } else {
+            instructor = null;
+        }
+        return instructor;
     }
 }
