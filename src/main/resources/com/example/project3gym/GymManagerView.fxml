@@ -1,47 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="677.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3gym.GymManagerController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="797.0" style="-fx-background-color: #c2b1fc;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3gym.GymManagerController">
   <tabs>
+      <Tab text="Main Menu">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #c2b1fc;">
+               <children>
+                  <Label layoutX="37.0" layoutY="8.0" text="WELCOME TO THE GREATEST GYM IN NJ">
+                     <font>
+                        <Font name="Segoe UI Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="38.0" layoutY="154.0" prefHeight="318.0" prefWidth="721.0" text="- We have a variety of machines and free weights &#10;   ready to use as soon as you join!&#10;&#10;- Also we have fitness classes catered toward &#10;   every gym-goer, beginner to advanced!&#10;&#10;- Use the tabs above to register, unenroll, check in&#10;   and out of classes, and view member and class lists">
+                     <font>
+                        <Font name="Segoe UI Black" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
     <Tab text="Register">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #c2b1fc;">
                <children>
-                  <Button layoutX="315.0" layoutY="299.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="Add" />
                   <Label fx:id="registrationOutput" layoutX="240.0" layoutY="339.0" />
-                  <GridPane layoutX="50.0" layoutY="115.0">
+                  <GridPane layoutX="91.0" layoutY="119.0" prefHeight="130.0" prefWidth="200.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="38.4" minHeight="10.0" prefHeight="38.4" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="67.19999389648436" minHeight="10.0" prefHeight="40.000006103515624" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="57.20001220703125" minHeight="10.0" prefHeight="51.99999389648438" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <DatePicker fx:id="dobAdd" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="Date of Birth:" GridPane.rowIndex="2" />
-                        <Label text="First Name:" />
-                        <Label text="Last Name:" GridPane.rowIndex="1" />
-                        <TextArea fx:id="fNameAdd" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
-                        <TextArea fx:id="lNameAdd" prefHeight="2.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Date of Birth:" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
+                        <Label text="First Name:">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
+                        <Label text="Last Name:" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
+                        <TextArea fx:id="fNameAdd" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></TextArea>
+                        <TextArea fx:id="lNameAdd" prefHeight="11.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></TextArea>
                      </children>
                   </GridPane>
-                  <Label layoutX="338.0" layoutY="119.0" text="Membership:" />
-                  <RadioButton fx:id="standardToAdd" layoutX="440.0" layoutY="119.0" mnemonicParsing="false" text="Standard">
+                  <Label layoutX="440.0" layoutY="119.0" text="Membership:">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font></Label>
+                  <RadioButton fx:id="standardToAdd" layoutX="540.0" layoutY="119.0" mnemonicParsing="false" text="Standard">
                      <toggleGroup>
                         <ToggleGroup fx:id="membershipTypeAdd" />
                      </toggleGroup>
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
                   </RadioButton>
-                  <RadioButton fx:id="familyToAdd" layoutX="540.0" layoutY="119.0" mnemonicParsing="false" text="Family" toggleGroup="$membershipTypeAdd" />
-                  <RadioButton fx:id="premiumToAdd" layoutX="440.0" layoutY="152.0" mnemonicParsing="false" text="Premium" toggleGroup="$membershipTypeAdd" />
-                  <Label layoutX="339.0" layoutY="188.0" text="Location:" />
-                  <Label alignment="CENTER" layoutX="297.0" layoutY="14.0" prefHeight="46.0" prefWidth="82.0" text="Add Member:" />
-                  <Label alignment="CENTER" layoutX="250.0" layoutY="60.0" prefHeight="0.0" prefWidth="176.0" text="Fill out following information" textAlignment="JUSTIFY" />
-                  <GridPane layoutX="440.0" layoutY="188.0">
+                  <RadioButton fx:id="familyToAdd" layoutX="650.0" layoutY="119.0" mnemonicParsing="false" text="Family" toggleGroup="$membershipTypeAdd">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font></RadioButton>
+                  <RadioButton fx:id="premiumToAdd" layoutX="540.0" layoutY="153.0" mnemonicParsing="false" text="Premium" toggleGroup="$membershipTypeAdd">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font></RadioButton>
+                  <Label layoutX="440.0" layoutY="210.0" text="Location:">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="253.0" prefHeight="46.0" prefWidth="290.0" text="Add Member Below">
+                     <font>
+                        <Font name="Segoe UI Black" size="24.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="260.0" layoutY="46.0" prefHeight="18.0" prefWidth="267.0" text="Fill out the following information:" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font></Label>
+                  <GridPane layoutX="540.0" layoutY="206.0" prefHeight="122.0" prefWidth="220.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -57,77 +125,170 @@
                            <toggleGroup>
                               <ToggleGroup fx:id="locTypeAdd" />
                            </toggleGroup>
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
                         </RadioButton>
-                        <RadioButton fx:id="locBridgewaterAdd" mnemonicParsing="false" text="Bridgewater" toggleGroup="$locTypeAdd" GridPane.rowIndex="1" />
-                        <RadioButton fx:id="locFranklinAdd" mnemonicParsing="false" text="Franklin" toggleGroup="$locTypeAdd" GridPane.columnIndex="1" />
-                        <RadioButton fx:id="locSomervilleAdd" mnemonicParsing="false" text="Somerville" toggleGroup="$locTypeAdd" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <RadioButton fx:id="locPiscatawayAdd" mnemonicParsing="false" text="Piscataway" toggleGroup="$locTypeAdd" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="locBridgewaterAdd" mnemonicParsing="false" text="Bridgewater" toggleGroup="$locTypeAdd" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="locFranklinAdd" mnemonicParsing="false" text="Franklin" toggleGroup="$locTypeAdd" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="locSomervilleAdd" mnemonicParsing="false" text="Somerville" toggleGroup="$locTypeAdd" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="locPiscatawayAdd" mnemonicParsing="false" text="Piscataway" toggleGroup="$locTypeAdd" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></RadioButton>
                      </children>
                   </GridPane>
-                  <TextArea fx:id="addOutput" layoutX="53.0" layoutY="325.0" prefHeight="195.0" prefWidth="569.0" />
+                  <VBox layoutX="-3.0" layoutY="357.0" prefHeight="283.0" prefWidth="804.0">
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onAddButtonClick" prefHeight="26.0" prefWidth="804.0" text="Add">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="addOutput" prefHeight="271.0" prefWidth="804.0">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
                </children></AnchorPane>
       </content>
     </Tab>
     <Tab text="Unenroll">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #c2b1fc;">
                <children>
-                  <GridPane layoutX="239.0" layoutY="111.0">
+                  <GridPane layoutX="299.0" layoutY="137.0" prefHeight="129.0" prefWidth="200.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                      </columnConstraints>
                      <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="41.19998779296875" minHeight="10.0" prefHeight="41.19998779296875" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.60001220703125" minHeight="10.0" prefHeight="34.400012207031246" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="53.00000610351562" minHeight="10.0" prefHeight="53.00000610351562" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
                         <DatePicker fx:id="dobRemove" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="Date of Birth:" GridPane.rowIndex="2" />
-                        <Label text="First Name:" />
-                        <Label text="Last Name:" GridPane.rowIndex="1" />
-                        <TextArea fx:id="fNameRemove" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
-                        <TextArea fx:id="lNameRemove" prefHeight="2.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Date of Birth:" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
+                        <Label text="First Name:">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
+                        <Label text="Last Name:" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
+                        <TextArea fx:id="fNameRemove" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></TextArea>
+                        <TextArea fx:id="lNameRemove" prefHeight="2.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></TextArea>
                      </children>
                   </GridPane>
-                  <Button layoutX="313.0" layoutY="262.0" mnemonicParsing="false" onAction="#onRemoveButtonClick" text="Delete" />
-                  <Label layoutX="275.0" layoutY="36.0" text="Enter info to leave gym:" />
-                  <TextArea fx:id="removeOutput" layoutX="54.0" layoutY="313.0" prefHeight="195.0" prefWidth="569.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="302.0" layoutY="46.0" prefHeight="18.0" prefWidth="193.0" text="Enter info to leave gym:" textAlignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="253.0" prefHeight="46.0" prefWidth="290.0" text="Remove Member Below">
+                     <font>
+                        <Font name="Segoe UI Black" size="24.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutY="357.0" prefHeight="282.0" prefWidth="798.0">
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onRemoveButtonClick" prefHeight="26.0" prefWidth="798.0" text="Delete">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="removeOutput" prefHeight="262.0" prefWidth="798.0">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
                </children></AnchorPane>
       </content>
     </Tab>
       <Tab text="Check In/Check Out">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="638.0" prefWidth="892.0" style="-fx-background-color: #c2b1fc;">
                <children>
-                  <GridPane layoutX="25.0" layoutY="36.0" prefHeight="482.0" prefWidth="415.0">
+                  <GridPane layoutX="126.0" layoutY="75.0" prefHeight="402.0" prefWidth="544.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                      </columnConstraints>
                      <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="66.59998168945313" minHeight="10.0" prefHeight="51.199999999999996" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="120.40001525878905" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="110.40001525878907" minHeight="0.3999847412109432" prefHeight="102.59998779296876" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="106.19998779296873" minHeight="9.000006103515602" prefHeight="87.20001831054685" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="112.0" minHeight="0.0" prefHeight="112.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="35.00003662109373" minHeight="4.600012207031227" prefHeight="34.00001220703126" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="50.80001220703125" minHeight="10.0" prefHeight="45.59999389648438" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="66.59998168945313" minHeight="10.0" prefHeight="20.000006103515616" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="120.40001525878905" minHeight="0.0" prefHeight="47.199975585937494" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="121.00001831054688" minHeight="0.3999847412109432" prefHeight="121.00001831054688" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="106.19998779296873" minHeight="9.000006103515602" prefHeight="56.199993896484386" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="112.0" minHeight="0.0" prefHeight="92.20000610351565" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="74.40004882812502" minHeight="4.600012207031227" prefHeight="18.600012207031227" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
                         <DatePicker fx:id="dobCheck" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="Date of Birth:" GridPane.rowIndex="2" />
-                        <Label text="First Name:" />
-                        <Label text="Last Name:" GridPane.rowIndex="1" />
-                        <TextArea fx:id="fNameCheck" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
-                        <TextArea fx:id="lNameCheck" prefHeight="2.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label text="Class Name:" GridPane.rowIndex="4" />
-                        <Label text="Location:" GridPane.rowIndex="3" />
-                        <Label text="Class Instructor:" GridPane.rowIndex="5" />
+                        <Label text="Date of Birth:" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
+                        <Label text="First Name:">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
+                        <Label text="Last Name:" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
+                        <TextArea fx:id="fNameCheck" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></TextArea>
+                        <TextArea fx:id="lNameCheck" prefHeight="2.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></TextArea>
+                        <Label text="Class Name:" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
+                        <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Location:" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
+                        <Label alignment="BASELINE_CENTER" contentDisplay="TOP" text="Class Instructor:" GridPane.rowIndex="5">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
                         <Label GridPane.rowIndex="6" />
-                        <Label text="Guest:" GridPane.rowIndex="6" />
-                        <CheckBox fx:id="guest" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text="Guest:" GridPane.rowIndex="6">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></Label>
+                        <CheckBox fx:id="guest" mnemonicParsing="false" text="Yes" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></CheckBox>
                         <GridPane prefHeight="86.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -136,19 +297,34 @@
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="24.799999999999997" minHeight="10.0" prefHeight="24.799999999999997" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="4.400030517578124" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
                               <RadioButton fx:id="instructorJenniferCheck" mnemonicParsing="false" text="Jennifer">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="instructorCheck" />
                                  </toggleGroup>
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font>
                               </RadioButton>
-                              <RadioButton fx:id="instructorKimCheck" mnemonicParsing="false" text="Kim" toggleGroup="$instructorCheck" GridPane.rowIndex="1" />
-                              <RadioButton fx:id="instructorDeniseCheck" mnemonicParsing="false" text="Denise" toggleGroup="$instructorCheck" GridPane.columnIndex="1" />
-                              <RadioButton fx:id="instructorEmmaCheck" mnemonicParsing="false" text="Emma" toggleGroup="$instructorCheck" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <RadioButton fx:id="instructorDavisCheck" mnemonicParsing="false" text="Davis" toggleGroup="$instructorCheck" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="instructorKimCheck" mnemonicParsing="false" text="Kim" toggleGroup="$instructorCheck" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font></RadioButton>
+                              <RadioButton fx:id="instructorDeniseCheck" mnemonicParsing="false" text="Denise" toggleGroup="$instructorCheck" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font></RadioButton>
+                              <RadioButton fx:id="instructorEmmaCheck" mnemonicParsing="false" text="Emma" toggleGroup="$instructorCheck" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font></RadioButton>
+                              <RadioButton fx:id="instructorDavisCheck" mnemonicParsing="false" text="Davis" toggleGroup="$instructorCheck" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font></RadioButton>
                            </children>
                         </GridPane>
                         <GridPane prefHeight="76.0" prefWidth="317.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -157,21 +333,36 @@
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                            </columnConstraints>
                            <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="34.200018310546874" minHeight="10.0" prefHeight="34.200018310546874" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="51.1999683380127" minHeight="10.0" prefHeight="35.19998168945313" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.8" minHeight="10.0" prefHeight="25.799999999999997" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="14.79999389648438" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
                               <RadioButton fx:id="locEdisonCheck" mnemonicParsing="false" text="Edison">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="locationTypeCheck" />
                                  </toggleGroup>
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font>
                               </RadioButton>
-                              <RadioButton fx:id="locBridgewaterCheck" mnemonicParsing="false" text="Bridgewater" toggleGroup="$locationTypeCheck" GridPane.rowIndex="1" />
-                              <RadioButton fx:id="locFranklinCheck" mnemonicParsing="false" text="Franklin" toggleGroup="$locationTypeCheck" GridPane.columnIndex="1" />
-                              <RadioButton fx:id="locSomervilleCheck" mnemonicParsing="false" text="Somerville" toggleGroup="$locationTypeCheck" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <RadioButton fx:id="locPiscatawayCheck" mnemonicParsing="false" text="Piscataway" toggleGroup="$locationTypeCheck" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="locBridgewaterCheck" mnemonicParsing="false" text="Bridgewater" toggleGroup="$locationTypeCheck" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font></RadioButton>
+                              <RadioButton fx:id="locFranklinCheck" mnemonicParsing="false" text="Franklin" toggleGroup="$locationTypeCheck" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font></RadioButton>
+                              <RadioButton fx:id="locSomervilleCheck" mnemonicParsing="false" text="Somerville" toggleGroup="$locationTypeCheck" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font></RadioButton>
+                              <RadioButton fx:id="locPiscatawayCheck" mnemonicParsing="false" text="Piscataway" toggleGroup="$locationTypeCheck" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font></RadioButton>
                            </children>
                         </GridPane>
                         <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
@@ -181,34 +372,67 @@
                            </columnConstraints>
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="32.8" minHeight="10.0" prefHeight="32.8" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="12.399999999999999" minHeight="0.0" prefHeight="12.399999999999999" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="6.799993896484374" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
                               <RadioButton fx:id="cNamePilatesCheck" mnemonicParsing="false" text="Pilates">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="classTypeCheck" />
                                  </toggleGroup>
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font>
                               </RadioButton>
-                              <RadioButton fx:id="cNameCardioCheck" mnemonicParsing="false" text="Cardio" toggleGroup="$classTypeCheck" GridPane.rowIndex="1" />
-                              <RadioButton fx:id="cNameSpinningCheck" mnemonicParsing="false" text="Spinning" toggleGroup="$classTypeCheck" GridPane.columnIndex="1" />
+                              <RadioButton fx:id="cNameCardioCheck" mnemonicParsing="false" text="Cardio" toggleGroup="$classTypeCheck" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font></RadioButton>
+                              <RadioButton fx:id="cNameSpinningCheck" mnemonicParsing="false" text="Spinning" toggleGroup="$classTypeCheck" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="12.0" />
+                                 </font></RadioButton>
                            </children>
                         </GridPane>
                      </children>
                   </GridPane>
-                  <Label layoutX="232.0" layoutY="14.0" text="Enter Info to check in/check out of class:" />
-                  <Button layoutX="540.0" layoutY="43.0" mnemonicParsing="false" onAction="#onCheckInButtonClick" text="Check In" />
-                  <Button layoutX="535.0" layoutY="69.0" mnemonicParsing="false" onAction="#onCheckOutButtonClick" text="Check Out" />
-                  <TextArea fx:id="checkOutput" layoutX="488.0" layoutY="94.0" prefHeight="258.0" prefWidth="167.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="252.0" layoutY="46.0" prefHeight="18.0" prefWidth="294.0" text="Enter Info to check in/check out of class:" textAlignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="217.0" prefHeight="46.0" prefWidth="364.0" text="Check In/Check Out Below">
+                     <font>
+                        <Font name="Segoe UI Black" size="24.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="-1.0" layoutY="488.0" prefHeight="152.0" prefWidth="797.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onCheckInButtonClick" prefHeight="26.0" prefWidth="840.0" text="Check In">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#onCheckOutButtonClick" prefHeight="26.0" prefWidth="809.0" text="Check Out">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="checkOutput" prefHeight="211.0" prefWidth="126.0">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
                </children></AnchorPane>
         </content>
       </Tab>
       <Tab text="Load">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #c2b1fc;">
                <children>
-                  <GridPane layoutX="187.0" layoutY="116.0" prefHeight="145.0" prefWidth="303.0">
+                  <GridPane layoutX="247.0" layoutY="127.0" prefHeight="145.0" prefWidth="303.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -222,32 +446,48 @@
                         <RadioButton fx:id="loadMembers" mnemonicParsing="false" text="Load Member List">
                            <toggleGroup>
                               <ToggleGroup fx:id="loadType" />
-                           </toggleGroup></RadioButton>
-                        <RadioButton fx:id="loadClasses" mnemonicParsing="false" text="Load Class Schedule" toggleGroup="$loadType" GridPane.rowIndex="1" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="loadClasses" mnemonicParsing="false" text="Load Class Schedule" toggleGroup="$loadType" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></RadioButton>
                      </children>
                   </GridPane>
-                  <Label layoutX="281.0" layoutY="53.0" text="Load Lists To Preview:" />
-                  <Button layoutX="317.0" layoutY="262.0" mnemonicParsing="false" onAction="#onLoadButtonClick" text="Load" />
-                  <TextArea fx:id="loadOutput" layoutX="53.0" layoutY="313.0" prefHeight="195.0" prefWidth="569.0" />
+                  <Label layoutX="333.0" layoutY="46.0" text="Load Lists To Preview:">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="141.0" prefHeight="46.0" prefWidth="516.0" text="Load Member/Class Lists Below">
+                     <font>
+                        <Font name="Segoe UI Black" size="24.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutY="316.0" prefHeight="323.0" prefWidth="798.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onLoadButtonClick" prefHeight="26.0" prefWidth="798.0" text="Load">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="loadOutput" prefHeight="304.0" prefWidth="798.0">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
                </children>
             </AnchorPane>
         </content>
       </Tab>
-      <Tab text="About">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-        </content>
-      </Tab>
-      <Tab fx:id="quitButton" onSelectionChanged="#onQuitButtonClick" text="Quit">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-        </content>
-      </Tab>
       <Tab text="Print">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #c2b1fc;">
                <children>
-                  <GridPane layoutX="159.0" layoutY="98.0" prefHeight="146.0" prefWidth="427.0">
+                  <GridPane layoutX="163.0" layoutY="139.0" prefHeight="146.0" prefWidth="514.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -263,20 +503,100 @@
                            <toggleGroup>
                               <ToggleGroup fx:id="printType" />
                            </toggleGroup>
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
                         </RadioButton>
-                        <RadioButton fx:id="countyList" mnemonicParsing="false" text="Member List Sort By County" toggleGroup="$printType" GridPane.columnIndex="1" />
-                        <RadioButton fx:id="nameList" mnemonicParsing="false" text="Member List Sort By Name" toggleGroup="$printType" GridPane.rowIndex="1" />
-                        <RadioButton fx:id="expireList" mnemonicParsing="false" text="Member List Sort By Expiration" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <RadioButton fx:id="feeList" mnemonicParsing="false" text="Unsorted Member List w/ Fees" toggleGroup="$printType" GridPane.rowIndex="2" />
-                        <RadioButton fx:id="classSchedule" mnemonicParsing="false" text="Class Schedule" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="countyList" mnemonicParsing="false" text="Member List Sort By County" toggleGroup="$printType" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="nameList" mnemonicParsing="false" text="Member List Sort By Name" toggleGroup="$printType" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="expireList" mnemonicParsing="false" text="Member List Sort By Expiration" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="feeList" mnemonicParsing="false" text="Unsorted Member List w/ Fees" toggleGroup="$printType" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="classSchedule" mnemonicParsing="false" text="Class Schedule" toggleGroup="$printType" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font></RadioButton>
                      </children>
                   </GridPane>
                   <VBox layoutX="261.0" layoutY="264.0" prefHeight="44.0" prefWidth="97.0" />
-                  <TextArea fx:id="printOutput" layoutX="54.0" layoutY="286.0" prefHeight="195.0" prefWidth="569.0" />
-                  <Label layoutX="269.0" layoutY="43.0" text="Choose Something to Display:" />
-                  <Button layoutX="314.0" layoutY="245.0" mnemonicParsing="false" onAction="#onPrintButtonClick" text="Print" />
+                  <Label layoutX="310.0" layoutY="46.0" text="Choose Something to Display:">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="141.0" prefHeight="46.0" prefWidth="516.0" text="Print Member/Class Lists Below">
+                     <font>
+                        <Font name="Segoe UI Black" size="24.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutY="320.0" prefHeight="319.0" prefWidth="797.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onPrintButtonClick" prefHeight="26.0" prefWidth="811.0" text="Print">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="printOutput" prefHeight="358.0" prefWidth="798.0">
+                           <font>
+                              <Font name="Segoe UI Black" size="12.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
                </children>
             </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="About">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #c2b1fc;">
+               <children>
+                  <Label layoutX="37.0" layoutY="14.0" text="A Little Bit About The Creators:">
+                     <font>
+                        <Font name="Segoe UI Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="37.0" layoutY="117.0" prefHeight="110.0" prefWidth="722.0" text="- Arya and John love to go the gym and they hope that&#10;   this program will be able to get you to your goals &#10;">
+                     <font>
+                        <Font name="Segoe UI Black" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="249.0" fitWidth="216.0" layoutX="65.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../../../../../Downloads/IMG_2695.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="248.0" fitWidth="225.0" layoutX="573.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../../../../../Downloads/46E41688-B228-4779-9D2A-8E801966FD10.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="37.0" layoutY="337.0" prefHeight="36.0" prefWidth="235.0" text="Some of my friends after using the app:">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="588.0" layoutY="337.0" prefHeight="36.0" prefWidth="155.0" text="Arya after using the app:">
+                     <font>
+                        <Font name="Segoe UI Black" size="12.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="quitButton" onSelectionChanged="#onQuitButtonClick" text="Quit">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #c2b1fc;" />
         </content>
       </Tab>
   </tabs>
